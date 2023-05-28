@@ -2,7 +2,7 @@ function FormSection() {
   return (
     <div className="flex flex-wrap">
       <form className="flex flex-col justify-center items-center w-1/2 bg-slate-500">
-        <h2 className="text-6xl font-bold my-2 text-white">
+        <h2 className="text-2xl lg:text-6xl md:text-3xl sm:text-2xl font-bold my-2 text-white">
           Sign up for newsletter !
         </h2>
 

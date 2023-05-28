@@ -4,8 +4,7 @@
 }
 
 .not-scrolled {
-  transition: all 0.5s;
-  animation: dropDown 0.5s reverse;
+  transition: all 1s;
 }
 
 @keyframes dropDown {

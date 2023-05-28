@@ -10,8 +10,9 @@ function Navbar() {
   useEffect(() => {
     const checkIfScrolled = () => {
       const scrolledLevel = document.body.getBoundingClientRect();
+      console.log(scrolledLevel.top);
 
-      if (scrolledLevel.y < -50) {
+      if (scrolledLevel.y <= -70) {
         setScrolled(true);
       } else {
         setScrolled(false);
@@ -27,8 +28,10 @@ function Navbar() {
 
   return (
     <nav
-      className={`flex justify-between bg-sky-700 transition-all duration-500 ${
-        scrolled ? "sticky z-50 top-0 left-0 bg-sky-500 scrolled" : ""
+      className={`flex justify-between bg-sky-700 rounded-ee-lg rounded-es-lg ${
+        scrolled
+          ? "sticky z-50 top-0 left-0 bg-blue-400 scrolled"
+          : "static top-0 left-0 z-50 not-scrolled bg-sky-700"
       }`}
     >
       <div className="w-[50px] h-[50px] m-2">
@@ -40,10 +43,10 @@ function Navbar() {
       </div>
 
       <div className="flex justify-around w-72 items-center">
-        <Link className="text-white">Link</Link>
-        <Link className="text-white">Link</Link>
-        <Link className="text-white">Link</Link>
-        <Link className="text-white">Link</Link>
+        <Link className={`text-white ${scrolled && "text-black"}  `}>Link</Link>
+        <Link className={`text-white ${scrolled && "text-black"}`}>Link</Link>
+        <Link className={`text-white ${scrolled && "text-black"}  `}>Link</Link>
+        <Link className={`text-white ${scrolled && "text-black"}`}>Link</Link>
       </div>
     </nav>
   );
